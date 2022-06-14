@@ -1,0 +1,44 @@
+{
+    "base": {
+      "category": "STATISTICAL_ANALYSIS",
+      "name": "纵向Spearman系数",
+      "wareId": "cn.fudata.FL_SPEARMAN",
+      "version": "beta",
+      "support": ["beta"],
+      "federatedType": "HETERO",
+      "desc": "",
+      "dev": "fudata",
+      "type": "系统组件",
+      "needSetting": "0"
+    },
+    "settings": {},
+    "menu": [
+      {
+        "title": "选择特征", "url": "/h/home.html", "type": "MAXIMIZE","name": "HOME"
+      },
+      {
+        "title": "下载结果", "url": "/h/download.html", "type": "NEW_TAB", "name": "DOWNLOAD"
+      }
+    ],
+    "inputs": [
+      {
+        "paramType": "DATASET",
+        "paramName": "input1",
+        "paramIndex": 1,
+        "paramIndexRequired": 1,
+        "paramDesc": "数据集引脚",
+        "paramCategory": ["数据集|融合集", "数据集|连续型", "数据集|离散型"]
+      }
+    ],
+    "outputs": [
+      {
+        "paramType": "DATASET",
+        "paramName": "output1",
+        "paramIndex": 1,
+        "paramIndexRequired": 1,
+        "paramDesc": "数据集引脚",
+        "paramCategory": ["数据集|融合集", "数据集|连续型", "数据集|离散型"]
+      }
+    ]
+  }
+  

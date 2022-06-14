@@ -1,0 +1,97 @@
+{
+  "base": {
+    "category": "OTHER",
+    "name": "评分卡转换",
+    "wareId": "cn.fudata.SCORECARD",
+    "version": "v1.0.0",
+    "support": [
+      "v1.0.0"
+    ],
+    "federatedType": "HETERO",
+    "logo": "",
+    "desc": "",
+    "needSetting": "1",
+    "dev": "fudata",
+    "type": "系统组件"
+  },
+  "menu": [
+    {
+      "title": "查看评分卡",
+      "url": "/h/model_report.html",
+      "type": "NEW_TAB",
+      "name": "REPORT"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "dataSplitName": {
+        "type": "html",
+        "default": "<h4 style='margin-bottom:0'>数据集拆分</h4>"
+      },
+      "base_score": {
+        "title": "P0(基准分)",
+        "type": "number",
+        "pattern": "^[1-9]\\d*$",
+        "default": 600,
+        "minimum": 1,
+        "maximum": 10000,
+        "message": {
+          "minimum": "请输入[1,10000]之间的正整数",
+          "pattern": "请输入[1,10000]之间的正整数",
+          "maximum": "请输入[1,10000]之间的正整数"
+        }
+      },
+      "base_odds": {
+        "title": "θ0(基准ODDS)",
+        "type": "number",
+        "default": 0.05,
+        "minimum": 0.000001,
+        "maximum": 1000,
+        "message": {
+          "minimum": "请输入(0,1000]之间的正整数",
+          "pattern": "请输入(0,1000]之间的正整数",
+          "maximum": "请输入(0,1000]之间的正整数"
+        }
+      },
+       "pdo": {
+        "title": "PDO(该违约概率翻倍的评分)",
+        "type": "number",
+        "pattern": "^[1-9]\\d*$",
+        "default": 40,
+        "minimum": 1,
+        "maximum": 10000,
+        "message": {
+          "minimum": "请输入[1,10000]之间的正整数",
+          "pattern": "请输入[1,10000]之间的正整数",
+          "maximum": "请输入[1,10000]之间的正整数"
+        }
+      }
+    },
+    "required": [
+      "base_score",
+      "base_odds",
+      "pdo"
+    ]
+  },
+  "inputs": [
+    {
+      "paramType": "MODEL",
+      "paramName": "input1",
+      "paramIndex": 1,
+      "paramIndexRequired": 1,
+      "paramDesc": "模型集引脚",
+      "paramCategory": ["模型"]
+    }
+  ],
+  "outputs": [
+    {
+      "paramType": "MODEL",
+      "paramName": "SCORE_MODEL",
+      "paramIndexRequired": 1,
+      "paramIndex": 1,
+      "paramDesc": "输出模型引脚",
+      "paramCategory": ["模型|监督算法|回归模型"]
+    }
+  ]
+}

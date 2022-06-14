@@ -1,0 +1,42 @@
+{
+  "base": {
+    "category": "OTHER",
+    "name": "纵向模型稳定性分析",
+    "wareId": "cn.fudata.FL_PSINDEX",
+    "version": "v1.0.0_beta",
+    "support": [
+      "v1.0.0_beta"
+    ],
+    "federatedType": "HETERO",
+    "logo": "",
+    "dev": "fudata",
+    "desc": "",
+    "needSetting": "0",
+    "type": "系统组件"
+  },
+    "menu": [
+    {
+      "title": "组件稳定性",
+      "url": "/h/home.html",
+      "type": "MAXIMIZE",
+      "name": "HOME"
+    }
+  ],
+  "settings": {},
+  "inputs": [
+      {
+        "paramType": "DATASET",
+        "paramName": "Actual",
+        "paramIndex": 1,
+        "paramIndexRequired": 1,
+        "paramDesc": "Actual数据集引脚"
+      },
+      {
+        "paramType": "DATASET",
+        "paramName": "Excepted",
+        "paramIndex": 2,
+        "paramIndexRequired": 1,
+        "paramDesc": "Excepted数据集引脚"
+      }
+    ]
+  }

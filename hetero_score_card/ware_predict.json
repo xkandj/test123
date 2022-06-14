@@ -1,0 +1,37 @@
+{
+    "base": {
+        "category": "OTHER",
+        "name": "评分卡预测组件",
+        "wareId": "cn.fudata.SCORECARD_PREDICT",
+        "version": "v1.0.0",
+        "dev": "fudata",
+        "support": ["v1.0.0"],
+        "logo": "",
+        "desc": "评分卡评估/批量预测 /API预测组件 ..."
+    },
+    "settings":[
+    ],
+    "inputs":[
+        {
+            "paramTypes":"MODEL",
+            "paramName":"input2",
+            "paramDesc":"筛选规则引脚"
+        }
+    ],
+    "outputs":[
+        {
+            "paramType":"无",
+            "paramName":"PREDICT_DOWNLOAD",
+            "paramDesc":"输出模型引脚"
+        },
+        {
+          "paramType": "REPORT",
+          "paramName": "score_card_report",
+          "paramIndexRequired": 1,
+          "paramIndex": 2,
+          "paramDesc": "模型报告",
+          "paramCategory": ["报告|监督算法|分类模型|二分类"]
+        }
+    ]
+}
+

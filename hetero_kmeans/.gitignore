@@ -1,0 +1,29 @@
+*.log
+.python-version
+log/*
+log.*
+logs
+*.temp
+*.idea
+*.DS_Store
+*.project
+*.classpath
+venv
+.idea
+__pycache__
+*.pkl
+logit_model_15671511145951_model_result_data.json
+fmpc/dt/conf/11.py
+
+# 虚拟环境
+.venv
+
+#算法测试文件
+fmpc/**/*.csv
+
+# 测试环境临时文件
+fmpc_tests/job.json
+
+# 过滤求交的本地文件
+fmpc/mpc/inter_and_align/data/*
+wares/vifware_new

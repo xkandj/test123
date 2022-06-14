@@ -1,0 +1,29 @@
+{
+    "base": {
+        "category": "MACHINE_LEARNING",
+        "name": "K-Means预测组件",
+        "wareId": "cn.fudata.K_MEANS_PREDICT",
+        "version": "beta",
+        "dev": "fudata",
+        "support": ["beta"],
+        "logo": "",
+        "desc": "K_MEANS批量预测 /API预测组件 ..."
+    },
+    "settings":[
+    ],
+    "inputs":[
+        {
+            "paramTypes":"MODEL",
+            "paramName":"predict_model",
+            "paramDesc":"筛选规则引脚"
+        }
+    ],
+    "outputs":[
+        {
+            "paramTypes":"无",
+            "paramName":"PREDICT_DOWNLOAD",
+            "paramDesc":"输出模型引脚"
+        }
+    ]
+}
+

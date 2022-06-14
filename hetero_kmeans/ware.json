@@ -1,0 +1,113 @@
+{
+  "base": {
+    "category": "MACHINE_LEARNING",
+    "name": "K-Means组件",
+    "wareId": "cn.fudata.K_MEANS",
+    "version": "beta",
+    "support": ["beta"],
+    "federatedType": "HETERO",
+    "logo": "",
+    "dev": "fudata",
+    "needSetting": "1",
+    "desc": "KMeans训练 / 模型评估组件 ...",
+    "type": "系统组件"
+  },
+  "menu": [{"title": "模型报告", "url": "/h/model_report.html", "type": "NEW_TAB"}],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "algorithmSplitName": {
+        "type": "html",
+        "default": "<h4 style='margin-bottom:0'>算法配置</h4>"
+      },
+      "nInit": {
+        "title": "运行次数",
+        "type": "number",
+        "default": 10,
+        "pattern":"^[1-9]\\d*$",
+        "minimum": 5,
+        "maximum": 100,
+        "message": {
+          "minimum": "请输入值在[5，100]之间",
+          "maximum": "请输入值在[5，100]之间"
+        }
+      },
+      "nClusters": {
+        "title": "聚类数k",
+        "type": "number",
+        "default": 3,
+        "pattern":"^[1-9]\\d*$",
+        "minimum": 2,
+        "maximum": 20,
+        "message": {
+          "minimum": "请输入值在[2，20]之间",
+          "maximum": "请输入值在[2，20]之间"
+        }
+      },
+      "maxIter": {
+        "title": "最大迭代次数",
+        "type": "number",
+        "default": 300,
+        "pattern":"^[1-9]\\d*$",
+        "minimum": 100,
+        "maximum": 1000,
+        "message": {
+          "minimum": "请输入值在[100，1000]之间",
+          "maximum": "请输入值在[100，1000]之间"
+        }
+      },
+      "tol": {
+        "title": "范数的相对公差",
+        "type": "number",
+        "default": 0.0001,
+        "minimum": 0.00001,
+        "maximum": 0.01,
+        "ui:options":{
+          "placeholder":"请输入值在[1e-5, 1e-2]之间"
+         },
+        "message": {
+          "minimum": "请输入值在[1e-5, 1e-2]之间",
+          "maximum": "请输入值在[1e-5, 1e-2]之间"
+        }
+      }
+    },
+    "required": [
+      "nInit",
+      "nClusters",
+      "maxIter",
+      "tol"
+    ]
+  },
+  "inputs": [
+    {
+      "paramType": "DATASET",
+      "paramName": "input1",
+      "paramIndex": 1,
+      "paramIndexRequired": 1,
+      "paramDesc": "数据集引脚"
+    }
+  ],
+  "outputs": [
+    {
+      "paramType": "MODEL",
+      "paramName": "HETERO_MODEL",
+      "paramIndex": 1,
+      "paramIndexRequired": 1,
+      "paramDesc": "输出模型引脚"
+    },
+    {
+      "paramType": "DATASET",
+      "paramName": "LABELED_DATASET",
+      "paramIndexRequired": 1,
+      "paramIndex": 2,
+      "paramDesc": "聚类数据集"
+    },
+    {
+      "paramType": "REPORT",
+      "paramName": "CLUSTER_MODEL_REPORT",
+      "paramIndexRequired": 1,
+      "paramIndex": 3,
+      "paramDesc": "模型报告"
+    }
+  ]
+}

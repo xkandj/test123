@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>组件名称</title>
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/umi.css" />
+    <script>
+      window.routerBase = "/";
+    </script>
+    <script>
+      //! umi version: 3.2.23
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+      function whiteHref(value) {
+        var arr = location.pathname.split("/");
+        var m = arr.concat();
+        m.shift();
+        m.pop();
+        return "/" + m.join("/");
+      }
+      var secScript = document.createElement("script");
+      secScript.setAttribute("type", "text/javascript");
+      secScript.setAttribute("src", whiteHref() + "/umi.js");
+      document.body.insertBefore(secScript, document.body.lastChild);
+      var secLink = document.createElement("link");
+      secLink.setAttribute("rel", "stylesheet");
+      secLink.setAttribute("href", whiteHref() + "/umi.css");
+      document.head.insertBefore(secLink, document.head.lastChild);
+    </script>
+    <script src="/umi.js"></script>
+  </body>
+</html>
